@@ -35,7 +35,7 @@ class MidiInterface extends React.Component{
     enableTrigger = (index) => {
         debugger
         let copyOfState= this.state.triggers
-        copyOfState[index] = true
+        copyOfState[index] = !copyOfState[index]
         this.setState(copyOfState)
     }
     render(){
