@@ -1,6 +1,7 @@
 import React from 'react'
 import MidiTrigger from './MidiInterfaceParts/MidiTrigger'
 import ExportMidi from './MidiInterfaceParts/ExportMidi'
+const scribble = require('scribbletune');
 
 const globalStyles = {
     cursor: 'pointer'
@@ -23,17 +24,33 @@ class MidiInterface extends React.Component{
                 width: `${sizeOfTrigger * 2}px`,
                 backgroundColor: 'green',
                 ...globalStyles
-            }
+            },
+            midiString: ""
         }
     }
     exportMidiFile = () => {
-        this.generateMidistringFromTriggers()
+        // debugger
+        // let midiString = this.generateMidistringFromTriggers()
+
+        // // Create a clip that contains a musical idea
+        // let clip = scribble.clip({
+        //     notes: 'F#m C#m DM Bm EM AM DM C#m AM',
+        //     pattern: midiString
+        // });
+
+        // scribble.midi(clip, 'chords.mid');
+        this.setState({
+            midiString: this.generateMidistringFromTriggers()
+        })
+
     }
     generateMidistringFromTriggers = () => {
-        //return string base on this.state.trigger
+        return this.state.triggers.map(item =>{
+            return item ? "x" : "-"
+        }).join('')
+
     }
     enableTrigger = (index) => {
-        debugger
         let copyOfState= this.state.triggers
         copyOfState[index] = !copyOfState[index]
         this.setState(copyOfState)
@@ -42,7 +59,8 @@ class MidiInterface extends React.Component{
         const {
             styleForExportButton, 
             styleForTrigger, 
-            triggers
+            triggers,
+            midiString
         } = this.state
         return (
         <React.Fragment>
@@ -55,6 +73,7 @@ class MidiInterface extends React.Component{
                     stateOfTrigger={triggers[i]} 
                     enableTrigger={this.enableTrigger} />
             })}
+            <h1>{midiString}</h1>
         </React.Fragment>
         )
     }
