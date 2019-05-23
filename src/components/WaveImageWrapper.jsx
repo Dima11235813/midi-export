@@ -45,8 +45,9 @@ class WaveImageWrapper extends React.Component {
   }
   componentDidMount() {
     // instantiate Video.js
-    debugger;
+    
     this.player = videojs(this.audioNode, videoJsOptions, () => {
+      debugger;
       // print version information at startup
       var version_info =
         "Using video.js " +

@@ -6,6 +6,8 @@ import MidiInterface from './components/MidiInterface'
 import WaveImageWrapper from './components/WaveImageWrapper'
 
 class App extends Component {
+
+  
   render() {
     return (
       <div className="midi-export-app-container">

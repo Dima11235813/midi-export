@@ -11,8 +11,10 @@ class MidiInterface extends React.Component{
     constructor(){
         super()
         const sizeOfTrigger = 50
+        const numberOfMidiPad = 5
         this.state = {
-            triggers : new Array(8).fill(false),
+            triggers : new Array(numberOfMidiPad).fill(false),
+            currentActiveTrigger: null,
             styleForTrigger: {
                 height: `${sizeOfTrigger}px`,
                 width: `${sizeOfTrigger}px`,
@@ -28,6 +30,7 @@ class MidiInterface extends React.Component{
             midiString: ""
         }
     }
+    
     exportMidiFile = () => {
         // debugger
         // let midiString = this.generateMidistringFromTriggers()
