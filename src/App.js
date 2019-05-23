@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 // import numberOfMidiTrigger from './data/midiTemp.js'
 import MidiInterface from './components/MidiInterface'
+import WaveImageWrapper from './components/WaveImageWrapper'
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
           </ul>
         </header>
           <MidiInterface />
+          <WaveImageWrapper />
       </div>
     );
   }
