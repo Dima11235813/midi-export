@@ -1,2 +1,6 @@
 example
 https://codepen.io/Rumyra/pen/qyMzqN/
+
+react integration
+https://github.com/collab-project/videojs-wavesurfer/wiki/React
+

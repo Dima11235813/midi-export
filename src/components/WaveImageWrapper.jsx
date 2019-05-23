@@ -36,7 +36,7 @@ const videoJsOptions = {
   }
 };
 const waveImageWrapperStyles = {
-  backgrounColor: "#ACB2F2"
+  backgroundColor: "#ffffff"
 };
 
 class WaveImageWrapper extends React.Component {
@@ -47,7 +47,6 @@ class WaveImageWrapper extends React.Component {
     // instantiate Video.js
     
     this.player = videojs(this.audioNode, videoJsOptions, () => {
-      debugger;
       // print version information at startup
       var version_info =
         "Using video.js " +
